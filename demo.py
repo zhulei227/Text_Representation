@@ -7,7 +7,7 @@ BOW = BOWModel(where_is_corpus='./corpus/demo.txt',
 BOW.transfer()
 BOW.update_corpus_model_with_feature_select(feature_select_model=FeatureSelectModel(keep_feature_num=20,
                                                                                     how_to_extract_label=lambda line: int(line.split(',')[0])),
-                                            how_to_select_feature='gini')
+                                            how_to_select_feature='tf')
 
 bow_matrxit = BOW.encode_ndarray_texts(["微信付款", "微信付款可以吗"])
 bow_vector = BOW.encode_ndarray_text("微信付款可以么")
